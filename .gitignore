@@ -1,0 +1,38 @@
+// filepath: .gitignore
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Arquivos de Database
+*.sqlite3
+*.db
+
+# Arquivos de Log
+*.log
+
+# Arquivos de Media
+media/
+
+# Arquivos Estáticos Coletados
+staticfiles/
+
+# Arquivos IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db

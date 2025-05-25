@@ -1,0 +1,43 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls %}
+
+{% block breadcrumbs %}
+<div class="navegacao">
+    <a href="{% url 'admin:index' %}">{% trans 'Início' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label='pedidos' %}">Pedidos</a>
+    &rsaquo; <a href="{% url 'admin:pedidos_pedido_changelist' %}">Pedidos</a>
+    &rsaquo; {% trans 'Alterar status' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    
+    <div class="modulo">
+        <div class="linha-formulario">
+            {{ form.status.errors }}
+            <label for="{{ form.status.id_for_label }}" class="obrigatorio">{{ form.status.label }}:</label>
+            {{ form.status }}
+        </div>
+        
+        <h2>Pedidos selecionados:</h2>
+        <ul>
+            {% for pedido in pedidos %}
+            <li>
+                #{{ pedido.numero }} - {{ pedido.cliente_nome }} (Status atual: {{ pedido.get_status_display }})
+                <input type="hidden" name="_selected_action" value="{{ pedido.pk }}" />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="linha-botoes">
+        <input type="hidden" name="action" value="alterar_status" />
+        <input type="submit" name="apply" value="{% trans 'Confirmar mudança de status' %}" class="padrao" />
+        <a href="{% url 'admin:pedidos_pedido_changelist' %}" class="botao link-cancelar">{% trans 'Cancelar' %}</a>
+    </div>
+</form>
+{% endblock %}

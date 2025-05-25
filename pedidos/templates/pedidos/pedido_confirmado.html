@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <!-- Título do Pedido -->
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="cartao">
+                <div class="cartao-cabecalho">
+                    <!-- Número do Pedido -->
+                </div>
+                <div class="cartao-corpo">
+                    <div class="linha">
+                        <div class="coluna-esquerda">
+                            <!-- Informações do Cliente -->
+                        </div>
+                        <div class="coluna-direita">
+                            <!-- Informações da Entrega -->
+                        </div>
+                    </div>
+                    
+                    <!-- Seção de Observações -->
+                    
+                    <!-- Seção de Coordenadas -->
+                    
+                    <hr>
+                    
+                    <div class="acoes-pedido">
+                        <!-- Botões de Ação -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<style>
+.cartao {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+
+.cartao-cabecalho {
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px 8px 0 0;
+}
+
+.cartao-corpo {
+    padding: 20px;
+}
+
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.coluna-esquerda,
+.coluna-direita {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+}
+
+.coluna-esquerda {
+    border-right: 1px solid #eee;
+}
+
+.coluna-direita {
+    background-color: #fafafa;
+}
+
+.acoes-pedido {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+/* Estilos complementares */
+.titulo-secao {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.info-item strong {
+    color: #333;
+}
+
+.observacoes {
+    background-color: #fff3cd;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.coordenadas {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    font-family: monospace;
+}
+
+/* Estilos dos botões */
+.btn-acao {
+    margin: 5px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .coluna-esquerda,
+    .coluna-direita {
+        flex: 100%;
+    }
+    
+    .coluna-esquerda {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+}
+</style>

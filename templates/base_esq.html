@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Sistema Pizzaria{% endblock %}</title>
+    <!-- CSS Base -->
+    {% block css_extra %}{% endblock %}
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navegacao">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navegacao-menu">
+                <!-- Links do Menu -->
+            </div>
+            <div class="navegacao-usuario">
+                <!-- Área de Login -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="modalLogin">
+        <div class="modal-dialogo">
+            <div class="modal-conteudo">
+                <div class="modal-cabecalho">
+                    <!-- Título do Modal -->
+                </div>
+                <div class="modal-corpo">
+                    <!-- Formulário de Login -->
+                </div>
+                <div class="modal-rodape">
+                    <!-- Informações Adicionais -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        {% block conteudo %}{% endblock %}
+    </div>
+
+    <!-- Scripts Base -->
+    {% block scripts_extra %}{% endblock %}
+
+    <!-- Script Principal -->
+    <script>
+        class GerenciadorLogin {
+            constructor() {
+                // Inicialização
+            }
+
+            carregarEntregadores() {
+                // Carregar lista de entregadores
+            }
+
+            processarLogin() {
+                // Processar login do entregador
+            }
+
+            verificarSessao() {
+                // Verificar sessão do usuário
+            }
+        }
+
+        // Inicialização quando documento carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            const login = new GerenciadorLogin();
+        });
+    </script>
+</body>
+</html>
